@@ -1,0 +1,8 @@
+{
+    "address"               : { "owner" : "owner", "description" : "description" },
+    "U13113937065479682572"  : { "owner" : "Genesis Account", "description" : "" },
+    "U2065436277795836384"  : { "description" : "TYSLIN", "owner" : "Development and Support" },
+    "U8842529089226485961" : { "description" : "TYSLIN", "owner" : "Marketing" },
+    "U8842068055848619621"  : { "description" : "TYSLIN", "owner" : "Investors" },
+    "U15423595369615486571" : { "description" : "TYSLIN", "owner" : "Adoption and Bounty" }
+}

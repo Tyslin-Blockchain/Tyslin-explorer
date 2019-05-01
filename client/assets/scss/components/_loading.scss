@@ -1,0 +1,63 @@
+.tomo-loading {
+  &:before {
+    content: url('~/assets/img/loading.svg');
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.tomo-loading--full {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  height: calc(100vh - 80px - 104px);
+
+  &:before {
+    content: url('~/assets/img/tomo-loading.svg');
+    opacity: .3;
+    height: 40px;
+    width: 40px;
+  }
+
+  @include media-breakpoint-up(md) {
+    height: calc(100vh - 60px - 53px);
+
+    &:before {
+      height: 60px;
+      width: 60px;
+    }
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: calc(100vh - 60px - 160px - 83px);
+  }
+}
+
+.tomo-loading--form {
+  position: relative;
+
+  &:before {
+    content: url('~/assets/img/tomo-loading.svg');
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: .5;
+    height: 40px;
+    width: 40px;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  &:after {
+    content: '';
+    background-color: rgba(255, 255, 255, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,40 @@
+.breadcrumb.tomo-breadcrumb {
+  background-color: transparent;
+  padding: 0px;
+  margin-bottom: 30px;
+
+  .breadcrumb-item {
+    vertical-align: middle;
+    word-break: break-all;
+    padding-right: .5rem;
+
+    &:before {
+      content: '\f105';
+      @extend %fa-icon;
+    }
+
+    &:first-child:before {
+      display: none;
+    }
+
+    &:last-child a {
+      color: #f89c1d;
+    }
+
+    + .breadcrumb-item {
+      padding-left: 0;
+    }
+
+    + .breadcrumb-item:last-child {
+      padding-right: 0;
+    }
+
+    + .breadcrumb-item:before {
+      padding-right: 8px;
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    margin-bottom: 0;
+  }
+}

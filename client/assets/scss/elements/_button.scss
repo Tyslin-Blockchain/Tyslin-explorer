@@ -1,0 +1,27 @@
+button {
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.btn-primary.btn-primary {
+  background-color: #cfa35b;
+  border-color: $color-primary;
+
+  &:hover {
+    background-color: $color-primary;
+    border-color: $color-primary;
+  }
+}
+
+.btn-secondary.btn-secondary {
+  background-color: $color-text;
+  border-color: $color-text;
+
+  &:hover {
+    background-color: $color-text;
+    border-color: $color-text;
+  }
+}

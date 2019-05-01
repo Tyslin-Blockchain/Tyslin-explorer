@@ -1,0 +1,60 @@
+{
+  "APP_ENV": "prod",
+  "MONGODB_URI": "mongodb://localhost:27017/tomoscan",
+  "redis": {
+    "host": "localhost",
+    "port": 6379,
+    "password": null,
+    "prefix": "ABCH"
+  },
+  "logs": {
+    "level": "debug"
+  },
+  "defaultCandidate": [
+    {
+      "name": "sun",
+      "owner": "0x251d14f71054f69f16f380bb9403bf79b70b6b61",
+      "candidate": "0x209f80706736806d06d14f7b33b0cd0654655994",
+      "cap": 50000
+    },
+    {
+      "name": "moon",
+      "owner": "0xf9c4cf8efca247d8b728a084a65017e601e01f7a",
+      "candidate": "0xc353a1a59d3db9e892374a5e649dfa26120846ad",
+      "cap": 50000
+    },
+    {
+      "name": "earth",
+      "owner": "0xdde31e25bb5ba9134df73416f7220b5e0a0b29ca",
+      "candidate": "0xba56880cf3bbdad348110215133a1040b5700d33",
+      "cap": 50000
+    }
+  ],
+
+  "WEB3_URI": "http://localhost:8549/",
+  "WEB3_WS_URI": "wss://localhost:8552/",
+  "DEBUG_QUERY": false,
+
+  "BASE_UNIT": "ABCH",
+  "PORT": 3333,
+  "DEBUG": "express:*",
+
+  "JWT_SECRET": "$2a$10$zMv2skn0DWEfsZGG91rC/O",
+  "APP_SECRET": "$2a$10$zMv2skn0DWEfsZGG91rC/O",
+
+  "SENDGRID_API_KEY": "",
+  "SENDER_EMAIL": "contact@tomochain.com",
+
+  "BASE_URL": "https://scan.testnet.tomochain.com/",
+  "CLIENT_URL": "http://localhost:3000/",
+  "TOMOMASTER_API_URL": "https://master.testnet.tomochain.com",
+
+  "BLOCK_PER_EPOCH": 900,
+  "REWARD": 250,
+  "MASTER_NODE_REWARD_PERCENT": 40,
+  "FOUNDATION_REWARD_PERCENT": 10,
+  "VOTER_REWARD_PERCENT": 50,
+  "LIMITED_RECORDS": 10000,
+
+  "RE_CAPTCHA_SECRET": "RE_CAPTCHA_SECRET"
+}

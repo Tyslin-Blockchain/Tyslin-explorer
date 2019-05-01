@@ -1,0 +1,13 @@
+@mixin transit() {
+  transition: all 0.5s ease;
+}
+
+@mixin fa-icon($icon) {
+  content: $icon;
+  @extend %fa-icon;
+}
+
+@mixin tm-icon($icon) {
+  content: $icon;
+  @extend %tm-icon;
+}

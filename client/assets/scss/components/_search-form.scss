@@ -1,0 +1,107 @@
+.search-form {
+  margin-bottom: 60px;
+
+  .input-group-prepend {
+    z-index: 0;
+  }
+
+  .btn.search-form__btn {
+    height: 38px;
+    width: 38px;
+    border: none;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    padding: 0;
+
+    @extend %transit;
+
+    &:hover {
+      box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, 0.3);
+    }
+
+    i {
+      font-size: 16px;
+      vertical-align: -1px;
+    }
+
+    @include media-breakpoint-up(sm) {
+      border-radius: 50%;
+      box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, 0.18);
+      margin-right: 25px;
+    }
+  }
+
+  .form-control.search-form__input {
+    box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, 0.08);
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    padding: 5px 20px;
+    border: none;
+    z-index: 1;
+    transition: box-shadow .5s ease;
+
+    &::placeholder {
+      color: rgb(167, 167, 167) !important;
+    }
+
+    &:focus {
+      box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    @include media-breakpoint-up(sm) {
+      border-radius: 100px;
+    }
+
+    @include media-breakpoint-up(md) {
+      padding-left: 45px;
+      padding-right: 45px;
+    }
+  }
+
+  &--mini {
+    margin-bottom: 30px;
+
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 0;
+    }
+
+    .btn.search-form__btn {
+      height: 40px;
+      width: 40px;
+
+      i {
+        vertical-align: 1px;
+      }
+
+      @include media-breakpoint-up(sm) {
+        margin-right: 15px;
+      }
+
+      @include media-breakpoint-up(xl) {
+        margin-right: 20px;
+      }
+    }
+
+    .form-control.search-form__input {
+      height: 40px;
+      padding: 5px 30px;
+      transition: max-width .5s ease;
+
+      @include media-breakpoint-up(sm) {
+        max-width: 300px;
+      }
+
+      @include media-breakpoint-up(md) {
+        text-align: center;
+        max-width: 160px;
+
+        &:focus {
+          text-align: left;
+          max-width: 400px;
+        }
+      }
+    }
+  }
+}

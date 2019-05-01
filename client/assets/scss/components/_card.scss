@@ -1,0 +1,328 @@
+.tomo-card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, .07);
+  padding: 20px;
+  margin-bottom: 50px;
+
+  a.disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  }
+
+
+  @include media-breakpoint-up(md) {
+    padding: 40px;
+  }
+
+  &__header {
+    text-align: center;
+    position: relative;
+    margin-bottom: 20px;
+
+    ul {
+      text-align: left;
+    }
+
+    @include media-breakpoint-up(md) {
+      text-align: left;
+      margin-bottom: 40px;
+
+      .block-breadcrumb {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+
+  i.token-status {
+    color: $color-primary;
+    font-size: 16px;
+  }
+
+  &__headline {
+    font-size: 24px;
+    font-weight: 500;
+    color: $white;
+    word-break: break-word;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+    &:before {
+      display: block;
+      height: 80px;
+      width: 80px;
+      margin: 0 auto 20px;
+    }
+
+    @include media-breakpoint-up(md) {
+      display: inline-block;
+      vertical-align: middle;
+
+      &:before {
+        display: inline-block;
+        vertical-align: middle;
+        margin-bottom: 0;
+        margin-right: 30px;
+      }
+    }
+  }
+
+  &__table {
+    table-layout: fixed;
+    width: 100%;
+    transition: all .5s ease;
+
+    thead tr {
+      grid-template-columns: 100%;
+      color: #f89c1d !important;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    td {
+      display: block;
+
+      &:first-child {
+        color:$white;
+      }
+      div.filter-address {
+        margin-bottom: -10px;
+        margin-top: -5px;
+      }
+    }
+
+    td.token-info-link {
+      ul {
+        margin: 0;
+      }
+      li i.fa {
+        font-size: 15px;
+        line-height: 100%;
+      }
+    }
+
+    a {
+      color: $color-primary;
+    }
+
+    i {
+      font-size: 17px;
+      line-height: 1.5em;
+      vertical-align: top;
+    }
+
+    .list-unstyled {
+      a, span {
+        display: inline-block;
+        vertical-align: bottom;
+      }
+    }
+
+    .text-truncate {
+      display: inline-block;
+      vertical-align: bottom;
+      max-width: 9rem;
+
+      @include media-breakpoint-up(lg) {
+        max-width: 15rem;
+      }
+
+      @include media-breakpoint-up(xl) {
+        max-width: 100%;
+      }
+    }
+
+    .vue-codemirror {
+      box-shadow: none;
+
+      .CodeMirror {
+        max-height: 100px;
+      }
+
+      .CodeMirror-wrap pre {
+        word-break: break-word;
+      }
+    }
+
+    @include media-breakpoint-up(sm) {
+
+      tr {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        grid-gap: 15px;
+        margin-bottom: 15px;
+      }
+
+      td {
+        word-break: break-word;
+
+        &:first-child {
+          text-align: right;
+        }
+
+        &:last-child {
+          color: #f89c1d;
+        }
+      }
+
+    }
+
+    @include media-breakpoint-up(md) {
+
+      tr {
+        grid-template-columns: 20% 80%;
+        margin-bottom: 30px;
+      }
+
+      td:first-child {
+        text-align: left;
+      }
+    }
+
+    @include media-breakpoint-up(xl) {
+      width: 80%;
+
+      tr {
+        grid-template-columns: 15% 75%;
+      }
+    }
+
+    @include media-breakpoint-up(2xl) {
+      width: 70%;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 30px;
+  }
+
+  .tomo-qrcode .btn.code-actions__copy {
+    box-shadow: none;
+    margin-bottom: 5px;
+   color:$white !important;
+  }
+}
+
+.tomo-card--transaction .tomo-readmore--is-open {
+  width: 60%;
+
+  @include media-breakpoint-up(sm) {
+    width: 90%;
+  }
+}
+
+.tomo-card--transaction .tomo-card__table {
+
+  .text-truncate {
+    max-width: 14rem;
+
+    @include media-breakpoint-up(sm) {
+      max-width: 18rem;
+    }
+
+    @include media-breakpoint-up(md) {
+      max-width: 100%;
+    }
+  }
+}
+
+.tomo-card--address {
+
+  .tomo-card__headline {
+    @include media-breakpoint-up(xl) {
+      max-width: 100%;
+    }
+
+    &--is-contract .tomo-readmore {
+      color: $color-text;
+    }
+  }
+
+  .tomo-card__body {
+    @include media-breakpoint-up(lg) {
+      display: grid;
+      grid-template-columns: 70% 30%;
+      align-items: center;
+    }
+  }
+
+  .tomo-card__table tr {
+
+    @include media-breakpoint-up(md) {
+      grid-template-columns: 30% 70%;
+
+      &.is-contract-message {
+        grid-template-columns: 100%;
+      }
+    }
+  }
+}
+
+.tomo-card--verify {
+
+  .text-danger {
+    margin-top: 10px;
+  }
+}
+
+.tomo-card--token {
+
+  .tomo-card__table {
+    @include media-breakpoint-up(2xl) {
+      width: 100%;
+    }
+  }
+
+  .filter-address {
+    input[type="text"],
+    .btn {
+      height: 34px;
+    }
+  }
+
+  .tomo-card__table tr {
+    grid-gap: 0 15px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dddddd;
+
+    @include media-breakpoint-up(sm) {
+      grid-template-columns: 30% 70%;
+    }
+  }
+
+  .tomo-card__table td:first-child {
+    text-align: left;
+  }
+
+  .text-truncate {
+
+    @include media-breakpoint-up(sm) {
+      max-width: 12rem;
+    }
+
+    @include media-breakpoint-up(3xl) {
+      max-width: 100%;
+    }
+  }
+}
+
+.tomo-card--block {
+
+  .tomo-card__headline:before {
+    content: url('~/assets/img/block.svg');
+  }
+}
+
+
+.tomo-card--address {
+
+  .tomo-card__headline:before {
+    content: url('~/assets/img/address.svg');
+  }
+}

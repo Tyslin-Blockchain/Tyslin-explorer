@@ -1,0 +1,21 @@
+.tomo-readmore {
+  display: inline-block;
+  margin-bottom: 0;
+  text-align: justify;
+  word-break: break-all;
+
+  .tomo-readmore__toggle {
+    display: inline-block;
+    vertical-align: 1px;
+
+    a {
+      color: currentColor;
+    }
+  }
+
+  &--is-open {
+    display: inline-block;
+    vertical-align: top;
+    width: 90%;
+  }
+}

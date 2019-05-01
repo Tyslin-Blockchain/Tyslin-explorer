@@ -1,0 +1,139 @@
+.tomo-total-items {
+  color: $white;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.alert-danger {
+  margin-bottom: 20px;
+}
+
+.alert-danger,
+.text-danger {
+  color: $color-danger !important;
+}
+
+.text-success {
+  color: $color-success !important
+}
+
+.text-purple {
+  color: $color-purple !important;
+}
+
+.text-black {
+  color: $black !important;
+}
+
+.contract-creation:before {
+  content: '';
+  display: inline-block;
+  vertical-align: baseline;
+  height: 11px;
+  width: 11px;
+  border-radius: 100%;
+  margin-right: 10px;
+  background-color: #fc98a6;
+
+  @include media-breakpoint-up(lg) {
+    margin-right: 15px;
+  }
+}
+
+.follow-button {
+  box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, .18);
+
+  &:focus,
+  &:hover {
+    box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, .3) !important;
+  }
+}
+
+.code {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.tooltip .arrow {
+  opacity: .8;
+}
+
+.tooltip-inner {
+  background-color: rgba(0, 0, 0, .8);
+}
+
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0 !important;
+  height: calc(100vh - 410px);
+
+  @include media-breakpoint-up(md) {
+    height: calc(100vh - 300px);
+  }
+
+  @include media-breakpoint-up(lg) {
+    height: calc(100vh - 320px);
+  }
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.forgot-password {
+  color: violet;
+  text-decoration: underline
+}
+
+.wrapper {
+  overflow:hidden;
+}
+
+#one {
+  float:left;
+  width: 75%;
+  margin-top: 18px;
+}
+#two {
+  float: left;
+  text-align: center;
+  width: 25%;
+}
+
+@media screen and (max-width: 1100px) {
+   #one {
+    float: none;
+    width:auto;
+  }
+  #two {
+    margin-top: 10px;
+    float: none;
+    width:auto;
+  }
+}
+.internal-tx {
+  font-size: 90%;
+  .hash-tag {
+    max-width: 135px !important;
+    display: inline-block !important;
+  }
+  .internal-color {
+    color: $color-text-2;
+  }
+  p {
+    margin: 1em;
+  }
+}
+.token-transfer {
+  .hash-tag {
+    max-width: 135px !important;
+    display: inline-block !important;
+  }
+  .internal-color {
+    color: $color-text-2;
+  }
+}

@@ -11,7 +11,7 @@
                         {key: 'Contract Name', value: smartContract.contractName},
                         {key: 'Compiler Version', value: smartContract.compiler},
                     ]"
-                    class="tomo-table tomo-table--verified-contract"
+                    class="tyslin-table tyslin-table--verified-contract"
                     thead-class="d-none"/>
             </b-col>
 
@@ -24,7 +24,7 @@
                             value: smartContract.optimization ? 'Yes' : 'No'
                         },
                     ]"
-                    class="tomo-table tomo-table--verified-contract"
+                    class="tyslin-table tyslin-table--verified-contract"
                     thead-class="d-none" />
             </b-col>
         </b-row>
@@ -41,7 +41,7 @@
             </div>
             <no-ssr placeholder="Codemirror Loading...">
                 <codemirror
-                    ref="tomoCmSourceCode"
+                    ref="tyslinCmSourceCode"
                     :value="smartContract.sourceCode" />
             </no-ssr>
         </b-form-group>
@@ -58,7 +58,7 @@
             </div>
             <no-ssr placeholder="Codemirror Loading...">
                 <codemirror
-                    ref="tomoCmAbiCode"
+                    ref="tyslinCmAbiCode"
                     :value="smartContract.abiCode"
                     :options="{mode:'application/ld+json',styleActiveLine:false}" />
             </no-ssr>
@@ -76,7 +76,7 @@
             </div>
             <no-ssr placeholder="Codemirror Loading...">
                 <codemirror
-                    ref="tomoCmCode"
+                    ref="tyslinCmCode"
                     :value="address.code"
                     :options="{mode:'application/ld+json',styleActiveLine:false}" />
             </no-ssr>

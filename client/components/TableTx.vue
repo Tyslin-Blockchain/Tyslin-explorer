@@ -1,25 +1,25 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
 
         <div
             v-if="total == 0"
-            class="tomo-empty">
-            <i class="fa fa-exchange tomo-empty__icon"/>
-            <p class="tomo-empty__description">No transaction found</p>
+            class="tyslin-empty">
+            <i class="fa fa-exchange tyslin-empty__icon"/>
+            <p class="tyslin-empty__description">No transaction found</p>
         </div>
 
         <p
             v-if="total > 0"
-            class="tomo-total-items">{{ _nFormatNumber('transaction', 'transactions', total, realTotal) }}</p>
+            class="tyslin-total-items">{{ _nFormatNumber('transaction', 'transactions', total, realTotal) }}</p>
 
         <table-base
             v-if="total > 0"
             :fields="fields"
             :items="items"
-            class="tomo-table--transactions">
+            class="tyslin-table--transactions">
             <template
                 slot="hash"
                 slot-scope="props">
@@ -108,15 +108,15 @@
 
             <template
                 slot="value"
-                slot-scope="props">{{ formatUnit(toTomo(props.item.value)) }}</template>
+                slot-scope="props">{{ formatUnit(toTyslin(props.item.value)) }}</template>
 
             <template
                 slot="txFee"
                 slot-scope="props">
                 <span
                     v-b-tooltip.hover
-                    :title="formatUnit(toTomo(props.item.gasPrice * props.item.gasUsed, 18))">
-                    {{ formatUnit(toTomo(props.item.gasPrice * props.item.gasUsed, 8)) }}</span></template>
+                    :title="formatUnit(toTyslin(props.item.gasPrice * props.item.gasUsed, 18))">
+                    {{ formatUnit(toTyslin(props.item.gasPrice * props.item.gasUsed, 8)) }}</span></template>
         </table-base>
 
         <b-pagination-nav
@@ -128,7 +128,7 @@
             :link-gen="linkGen"
             :limit="7"
             align="center"
-            class="tomo-pagination"
+            class="tyslin-pagination"
             @change="onChangePaginate"
         />
     </section>

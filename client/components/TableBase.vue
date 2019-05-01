@@ -1,5 +1,5 @@
 <template>
-    <table class="tomo-table">
+    <table class="tyslin-table">
         <thead>
             <tr>
                 <th

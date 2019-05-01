@@ -62,7 +62,7 @@ TxController.get('/txs', [
                 condition = { to: contractAddress.BlockSigner, isPending: false }
             } else if (type === 'otherTxs') {
                 total = specialAccount ? specialAccount.other : 0
-                condition = { to: { $nin: [contractAddress.BlockSigner, contractAddress.TomoRandomize] },
+                condition = { to: { $nin: [contractAddress.BlockSigner, contractAddress.TyslinRandomize] },
                     isPending: false }
             } else if (type === 'pending') {
                 total = specialAccount ? specialAccount.pending : 0

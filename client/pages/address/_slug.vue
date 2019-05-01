@@ -1,13 +1,13 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
-        <div class="card tomo-card tomo-card--address">
-            <div class="tomo-card__header">
+        <div class="card tyslin-card tyslin-card--address">
+            <div class="tyslin-card__header">
                 <h3
-                    :class="`tomo-card__headline
-                    ${(address && address.isContract ? ' tomo-card__headline--is-contract' : '')}`">
+                    :class="`tyslin-card__headline
+                    ${(address && address.isContract ? ' tyslin-card__headline--is-contract' : '')}`">
                     <span v-if="address && address.isContract">Contract: </span>
                     <read-more
                         :text="hash"
@@ -23,8 +23,8 @@
                     <span class="d-none d-xl-inline-block">{{ hash }}</span>
                 </h3>
             </div>
-            <div class="tomo-card__body">
-                <table class="tomo-card__table">
+            <div class="tyslin-card__body">
+                <table class="tyslin-card__table">
                     <tbody>
                         <tr v-if="address.accountName">
                             <td>Account Name</td>
@@ -35,13 +35,13 @@
                         <tr>
                             <td>ABCH Balance</td>
                             <td>
-                                <span>{{ formatUnit(toTomo(address.balance, 18)) }}</span>
+                                <span>{{ formatUnit(toTyslin(address.balance, 18)) }}</span>
                             </td>
                         </tr>
                         <tr>
                             <td>ABCH USD Value</td>
                             <td>
-                                <span>{{ formatNumber(usdPrice * toTomoNumber(address.balance), 18) }}</span>
+                                <span>{{ formatNumber(usdPrice * toTyslinNumber(address.balance), 18) }}</span>
                             </td>
                         </tr>
                         <tr>
@@ -104,7 +104,7 @@
                         </tr>
                     </tbody>
                 </table>
-                <div class="text-center text-lg-right tomo-qrcode">
+                <div class="text-center text-lg-right tyslin-qrcode">
                     <div>
                         <button
                             v-clipboard="hash"
@@ -127,7 +127,7 @@
         <b-tabs
             ref="allTabs"
             v-model="tabIndex"
-            class="tomo-tabs"
+            class="tyslin-tabs"
             @input="onSwitchTab">
             <!--:title="'In Transactions (' + formatNumber(inTxsCount) + ')'"-->
             <b-tab
@@ -299,9 +299,9 @@ export default {
         },
         codemirror () {
             return [
-                this.$refs.tomoCmSourceCode.codemirror,
-                this.$refs.tomoCmAbiCode.codemirror,
-                this.$refs.tomoCmCode.codemirror
+                this.$refs.tyslinCmSourceCode.codemirror,
+                this.$refs.tyslinCmAbiCode.codemirror,
+                this.$refs.tyslinCmCode.codemirror
             ]
         },
         hashTab () {

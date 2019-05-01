@@ -3,16 +3,16 @@
         <b-navbar
             toggleable="lg"
             variant="white"
-            class="tomo-nav">
-            <div class="container container--wide tomo-nav__wrapper">
+            class="tyslin-nav">
+            <div class="container container--wide tyslin-nav__wrapper">
                 <b-navbar-brand :to="{name: 'index'}">
                     <img
                         src="~/assets/img/logo.png"
-                        alt="TomoScan"
-                        class="tomo-nav__logo">
+                        alt="TyslinScan"
+                        class="tyslin-nav__logo">
                 </b-navbar-brand>
                 <b-navbar-toggle
-                    class="tomo-nav__toggle"
+                    class="tyslin-nav__toggle"
                     target="nav_collapse">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -66,7 +66,7 @@
                             <b-dropdown-item :to="{name: 'epochs'}">Epochs</b-dropdown-item>
                         </b-nav-item-dropdown>
                     </b-navbar-nav>
-                    <b-navbar-nav class="tomo-nav__login">
+                    <b-navbar-nav class="tyslin-nav__login">
                         <b-nav-item
                             :href="'https://www.jldevelop.com'"
                             :target="'_blank'">Need help?</b-nav-item>
@@ -105,12 +105,12 @@
         </b-navbar>
 
         <main
-            :class="isHomePage ? 'tomo-body-wrapper--home' : ''"
-            class="tomo-body-wrapper">
+            :class="isHomePage ? 'tyslin-body-wrapper--home' : ''"
+            class="tyslin-body-wrapper">
             <div class="container container--wide">
                 <div
                     v-if="! isHomePage"
-                    class="row align-items-center tomo-body-wrapper__heading">
+                    class="row align-items-center tyslin-body-wrapper__heading">
                     <b-col sm="5">
                         <breadcrumb/>
                     </b-col>
@@ -147,36 +147,36 @@
                                 placeholder="Search Address / TX / Block..."
                                 @keyup.enter="onGotoRoute">
                         </div>
-                        <div class="tomo-stat d-flex">
-                            <div class="tomo-stat__item">
+                        <div class="tyslin-stat d-flex">
+                            <div class="tyslin-stat__item">
                                 <nuxt-link :to="{name: 'accounts'}">
                                     <i
                                         v-if="! stats"
-                                        class="tomo-loading"/>
+                                        class="tyslin-loading"/>
                                     <span v-else>{{ formatNumber(stats.totalAddress) }}&nbsp;Accounts</span>
                                 </nuxt-link>
                             </div>
-                            <div class="tomo-stat__item">
+                            <div class="tyslin-stat__item">
                                 <nuxt-link :to="{name: 'tokens'}">
                                     <i
                                         v-if="! stats"
-                                        class="tomo-loading"/>
+                                        class="tyslin-loading"/>
                                     <span v-else>{{ formatNumber(stats.totalToken) }}&nbsp;Tokens</span>
                                 </nuxt-link>
                             </div>
-                            <div class="tomo-stat__item">
+                            <div class="tyslin-stat__item">
                                 <nuxt-link :to="{name: 'contracts'}">
                                     <i
                                         v-if="! stats"
-                                        class="tomo-loading"/>
+                                        class="tyslin-loading"/>
                                     <span v-else>{{ formatNumber(stats.totalSmartContract) }}&nbsp;Contracts</span>
                                 </nuxt-link>
                             </div>
-                            <div class="tomo-stat__item">
+                            <div class="tyslin-stat__item">
                                 <nuxt-link :to="{name: 'blocks'}">
                                     <i
                                         v-if="! stats"
-                                        class="tomo-loading"/>
+                                        class="tyslin-loading"/>
                                     <span v-else>{{ formatNumber(stats.totalBlock) }}&nbsp;Blocks</span>
                                 </nuxt-link>
                             </div>
@@ -187,19 +187,19 @@
             </div>
         </main>
 
-        <footer class="tomo-footer">
+        <footer class="tyslin-footer">
             <div class="container container--wide">
                 <div class="row">
                     <b-col
                         md="6"
-                        class="tomo-footer__copyright">
+                        class="tyslin-footer__copyright">
                         <p>ABCH scan {{ (new Date()).getFullYear() }}
                         </p>
                     </b-col>
                     <b-col
                         md="6"
                         class="text-md-right">
-                        <ul class="list-inline tomo-footer__social">
+                        <ul class="list-inline tyslin-footer__social">
                             <li class="list-inline-item">
                                 <a
                                     href="#"
@@ -315,9 +315,9 @@ export default {
             self.getStats()
         }
 
-        self.darkMode = Cookie.get('tomoscan_theme') === 'dark'
+        self.darkMode = Cookie.get('tyslinscan_theme') === 'dark'
 
-        if (typeof Cookie.get('tomoscan_theme') === 'undefined') {
+        if (typeof Cookie.get('tyslinscan_theme') === 'undefined') {
             document.getElementById('dark-mode-toggle').classList.add('try-dark-mode')
         }
     },
@@ -358,10 +358,10 @@ export default {
             self.stats = data.stats
         },
         toggleDarkMode (e) {
-            let darkMode = Cookie.get('tomoscan_theme') !== 'dark'
+            let darkMode = Cookie.get('tyslinscan_theme') !== 'dark'
             this.darkMode = darkMode
 
-            Cookie.set('tomoscan_theme', darkMode ? 'dark' : 'light', {
+            Cookie.set('tyslinscan_theme', darkMode ? 'dark' : 'light', {
                 expires: 365
             })
 

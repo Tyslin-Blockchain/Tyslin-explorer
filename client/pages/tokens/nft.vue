@@ -1,25 +1,25 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
 
         <div
             v-if="total == 0"
-            class="tomo-empty">
-            <i class="fa fa-chain-broken tomo-empty__icon"/>
-            <p class="tomo-empty__description">No token found</p>
+            class="tyslin-empty">
+            <i class="fa fa-chain-broken tyslin-empty__icon"/>
+            <p class="tyslin-empty__description">No token found</p>
         </div>
 
         <p
             v-if="total > 0"
-            class="tomo-total-items">{{ _nFormatNumber('token', 'tokens', total) }}</p>
+            class="tyslin-total-items">{{ _nFormatNumber('token', 'tokens', total) }}</p>
 
         <table-base
             v-if="total > 0"
             :fields="fields"
             :items="items"
-            class="tomo-table--tokens-nft">
+            class="tyslin-table--tokens-nft">
 
             <template
                 slot="hash"
@@ -56,7 +56,7 @@
             :link-gen="linkGen"
             :limit="7"
             align="center"
-            class="tomo-pagination"
+            class="tyslin-pagination"
             @change="onChangePaginate"
         />
     </section>

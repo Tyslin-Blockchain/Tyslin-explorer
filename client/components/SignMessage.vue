@@ -15,7 +15,7 @@
             <div
                 style="margin-top: 10px">
                 <strong>
-                    Method 2(easier): Using QR code scanning feature in TomoWallet to sign
+                    Method 2(easier): Using QR code scanning feature in TyslinWallet to sign
                 </strong>
             </div>
             <div
@@ -138,7 +138,7 @@ export default {
         self.messId = data.id
         console.log(data.url + data.id)
 
-        self.qrCode = encodeURI('tomochain:sign?message=' + data.message + '&' +
+        self.qrCode = encodeURI('tyslinchain:sign?message=' + data.message + '&' +
             'submitURL=' + data.url + data.id)
 
         if (self.processingMess) {

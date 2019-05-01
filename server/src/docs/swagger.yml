@@ -1,11 +1,11 @@
 swagger: '2.0'
 info:
   version: 1.0.0
-  title: TomoScan APIs
-  description: TomoScan APIs
+  title: TyslinScan APIs
+  description: TyslinScan APIs
   license:
     name: Github
-    url: 'https://github.com/tomochain/tomoscan'
+    url: 'https://github.com/tyslinchain/tyslinscan'
 tags:
   - name: Accounts
     description: Accounts API

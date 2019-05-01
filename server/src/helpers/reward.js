@@ -1,5 +1,5 @@
 const axios = require('axios')
-const { tomoValidator, blockSigner } = require('./tomo')
+const { tyslinValidator, blockSigner } = require('./tyslin')
 const config = require('config')
 const db = require('../models')
 const logger = require('./logger')
@@ -37,7 +37,7 @@ let RewardHelper = {
             await db.VoteHistory.insertMany(candidates)
         }
 
-        const contract = await tomoValidator.getValidatorContractWs()
+        const contract = await tyslinValidator.getValidatorContractWs()
         await contract.getPastEvents('allEvents', { fromBlock: startBlock, toBlock: endBlock })
             .then(async (events) => {
                 let map = events.map(async function (event) {
@@ -45,7 +45,7 @@ let RewardHelper = {
                     let owner = String(event.returnValues._owner || '').toLowerCase()
                     let candidate = String(event.returnValues._candidate || '').toLowerCase()
                     let cap = new BigNumber(event.returnValues._cap || 0)
-                    let capTomo = cap.dividedBy(10 ** 18)
+                    let capTyslin = cap.dividedBy(10 ** 18)
                     BigNumber.config({ EXPONENTIAL_AT: [-100, 100] })
 
                     return {
@@ -56,7 +56,7 @@ let RewardHelper = {
                         voter: voter,
                         owner: owner,
                         candidate: candidate,
-                        cap: capTomo.toNumber()
+                        cap: capTyslin.toNumber()
                     }
                 })
                 return Promise.all(map)
@@ -212,7 +212,7 @@ let RewardHelper = {
                 timestamp
             )
 
-            let ownerValidator = await tomoValidator.getCandidateOwner(validator.address)
+            let ownerValidator = await tyslinValidator.getCandidateOwner(validator.address)
             ownerValidator = ownerValidator.toString().toLowerCase()
 
             let userVoteAmount = await db.UserVoteAmount.findOne({
@@ -240,7 +240,7 @@ let RewardHelper = {
                 epoch: epoch,
                 startBlock: startBlock,
                 endBlock: endBlock,
-                address: contractAddress.TomoFoundation,
+                address: contractAddress.TyslinFoundation,
                 validator: validator.address,
                 reason: 'Foundation',
                 lockBalance: 0,
@@ -400,7 +400,7 @@ let RewardHelper = {
                 for (let m in rewards) {
                     hashes.push(m)
                 }
-                let url = urlJoin(config.get('TOMOMASTER_API_URL'), '/api/candidates/listByHash')
+                let url = urlJoin(config.get('TYSMASTER_API_URL'), '/api/candidates/listByHash')
                 let candidate = await axios.post(url, { 'hashes': hashes.join(',') })
                 let canR = candidate.data
                 let canName = {}
@@ -423,7 +423,7 @@ let RewardHelper = {
                             address: v.toLowerCase(),
                             validator: m.toLowerCase(),
                             validatorName: canName[m.toLowerCase()] ? canName[m.toLowerCase()] : 'Anonymous',
-                            reason: v.toLowerCase() === contractAddress.TomoFoundation ? 'Foundation' : 'Voter',
+                            reason: v.toLowerCase() === contractAddress.TyslinFoundation ? 'Foundation' : 'Voter',
                             lockBalance: 0,
                             reward: r,
                             rewardTime: block.timestamp * 1000,

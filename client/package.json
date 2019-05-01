@@ -1,7 +1,7 @@
 {
-  "name": "tomoscan",
+  "name": "tyslinscan",
   "version": "1.3.3",
-  "description": "TomoScan - TomoChain Block Explorer",
+  "description": "TyslinScan - TyslinChain Block Explorer",
   "scripts": {
     "lint": "eslint --cache ./ --ext .vue --ext .js --env mocha",
     "lint-fix": "eslint --cache ./ --ext .vue --ext .js --env mocha --fix",

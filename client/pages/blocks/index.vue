@@ -1,24 +1,24 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
         <div
             v-if="total == 0"
-            class="tomo-empty">
-            <i class="fa fa-cubes tomo-empty__icon"/>
-            <p class="tomo-empty__description">No block found</p>
+            class="tyslin-empty">
+            <i class="fa fa-cubes tyslin-empty__icon"/>
+            <p class="tyslin-empty__description">No block found</p>
         </div>
 
         <p
             v-if="total > 0"
-            class="tomo-total-items">{{ _nFormatNumber('block', 'blocks', total, realTotal) }}</p>
+            class="tyslin-total-items">{{ _nFormatNumber('block', 'blocks', total, realTotal) }}</p>
 
         <table-base
             v-if="total > 0"
             :fields="fields"
             :items="items"
-            class="tomo-table--blocks">
+            class="tyslin-table--blocks">
 
             <template
                 slot="number"
@@ -67,7 +67,7 @@
             :link-gen="linkGen"
             :limit="7"
             align="center"
-            class="tomo-pagination"
+            class="tyslin-pagination"
         />
     </section>
 </template>

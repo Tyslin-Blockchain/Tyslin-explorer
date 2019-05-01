@@ -5,7 +5,7 @@ const Web3Util = require('../helpers/web3')
 const logger = require('../helpers/logger')
 
 const SettingController = Router()
-var tomoUsd = {}
+var tyslinUsd = {}
 
 SettingController.get('/setting', async (req, res) => {
     try {
@@ -30,13 +30,13 @@ SettingController.get('/setting', async (req, res) => {
 
 SettingController.get('/setting/usd', async (req, res) => {
     try {
-        let { data } = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=tomochain&vs_currencies=usd')
+        let { data } = await axios.get('https://api.coingecko.com/api/v3/simple/price?ids=tyslinchain&vs_currencies=usd')
 
-        tomoUsd = data
+        tyslinUsd = data
     } catch (e) {
         logger.warn(e)
     }
-    return res.json(tomoUsd)
+    return res.json(tyslinUsd)
 })
 
 module.exports = SettingController

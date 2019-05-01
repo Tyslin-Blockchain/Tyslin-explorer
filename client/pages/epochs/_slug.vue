@@ -1,13 +1,13 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
-        <div class="card tomo-card tomo-card--block">
-            <div class="tomo-card__header">
+        <div class="card tyslin-card tyslin-card--block">
+            <div class="tyslin-card__header">
                 <h3
                     v-if="epoch"
-                    class="tomo-card__headline">Epoch
+                    class="tyslin-card__headline">Epoch
                     <span class="d-none d-lg-inline-block headline__block-block">#{{ epochNumber }}</span>
                 </h3>
                 <div
@@ -30,10 +30,10 @@
                     </div>
                 </div>
             </div>
-            <div class="tomo-card__body">
+            <div class="tyslin-card__body">
                 <table
                     v-if="epoch"
-                    class="tomo-card__table">
+                    class="tyslin-card__table">
                     <tbody>
                         <tr>
                             <td>Epoch</td>
@@ -88,7 +88,7 @@
         <b-tabs
             ref="allTabs"
             v-model="tabIndex"
-            class="tomo-tabs"
+            class="tyslin-tabs"
             @input="onSwitchTab">
             <!--:title="'Reward Voter (' + formatNumber(voterCount) + ')'"-->
             <b-tab

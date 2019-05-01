@@ -1,11 +1,11 @@
 <template>
-    <p :class="'tomo-readmore' + (isReadMore ? ' tomo-readmore--is-open' : '')">
+    <p :class="'tyslin-readmore' + (isReadMore ? ' tyslin-readmore--is-open' : '')">
         <span
             class="mr-1"
             v-html="formattedString"/>
         <span
             v-show="text.length > maxChars"
-            class="tomo-readmore__toggle">
+            class="tyslin-readmore__toggle">
             <a
                 v-show="!isReadMore"
                 :href="link"

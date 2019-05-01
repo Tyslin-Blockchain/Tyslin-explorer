@@ -1,4 +1,4 @@
-.tomo-nav {
+.tyslin-nav {
   transition: all .5s ease;
 
   &__logo {
@@ -29,7 +29,7 @@
     }
   }
 
-  .tomo-nav__login {
+  .tyslin-nav__login {
 
     .nav-link {
       color: #fff;
@@ -120,7 +120,7 @@
       transform-origin: 0% 50%;
     }
 
-    .tomo-nav__login {
+    .tyslin-nav__login {
 
       .dropdown-menu,
       .dropdown-item {
@@ -145,7 +145,7 @@
       margin: 0 20px;
     }
 
-    .tomo-nav__login .nav-item .nav-link {
+    .tyslin-nav__login .nav-item .nav-link {
       margin: 0;
     }
   }

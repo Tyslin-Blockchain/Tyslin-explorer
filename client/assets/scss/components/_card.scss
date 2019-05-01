@@ -1,4 +1,4 @@
-.tomo-card {
+.tyslin-card {
   border: none;
   border-radius: 10px;
   box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, .07);
@@ -201,14 +201,14 @@
     margin-bottom: 30px;
   }
 
-  .tomo-qrcode .btn.code-actions__copy {
+  .tyslin-qrcode .btn.code-actions__copy {
     box-shadow: none;
     margin-bottom: 5px;
    color:$white !important;
   }
 }
 
-.tomo-card--transaction .tomo-readmore--is-open {
+.tyslin-card--transaction .tyslin-readmore--is-open {
   width: 60%;
 
   @include media-breakpoint-up(sm) {
@@ -216,7 +216,7 @@
   }
 }
 
-.tomo-card--transaction .tomo-card__table {
+.tyslin-card--transaction .tyslin-card__table {
 
   .text-truncate {
     max-width: 14rem;
@@ -231,19 +231,19 @@
   }
 }
 
-.tomo-card--address {
+.tyslin-card--address {
 
-  .tomo-card__headline {
+  .tyslin-card__headline {
     @include media-breakpoint-up(xl) {
       max-width: 100%;
     }
 
-    &--is-contract .tomo-readmore {
+    &--is-contract .tyslin-readmore {
       color: $color-text;
     }
   }
 
-  .tomo-card__body {
+  .tyslin-card__body {
     @include media-breakpoint-up(lg) {
       display: grid;
       grid-template-columns: 70% 30%;
@@ -251,7 +251,7 @@
     }
   }
 
-  .tomo-card__table tr {
+  .tyslin-card__table tr {
 
     @include media-breakpoint-up(md) {
       grid-template-columns: 30% 70%;
@@ -263,16 +263,16 @@
   }
 }
 
-.tomo-card--verify {
+.tyslin-card--verify {
 
   .text-danger {
     margin-top: 10px;
   }
 }
 
-.tomo-card--token {
+.tyslin-card--token {
 
-  .tomo-card__table {
+  .tyslin-card__table {
     @include media-breakpoint-up(2xl) {
       width: 100%;
     }
@@ -285,7 +285,7 @@
     }
   }
 
-  .tomo-card__table tr {
+  .tyslin-card__table tr {
     grid-gap: 0 15px;
     padding-bottom: 20px;
     margin-bottom: 20px;
@@ -296,7 +296,7 @@
     }
   }
 
-  .tomo-card__table td:first-child {
+  .tyslin-card__table td:first-child {
     text-align: left;
   }
 
@@ -312,17 +312,17 @@
   }
 }
 
-.tomo-card--block {
+.tyslin-card--block {
 
-  .tomo-card__headline:before {
+  .tyslin-card__headline:before {
     content: url('~/assets/img/block.svg');
   }
 }
 
 
-.tomo-card--address {
+.tyslin-card--address {
 
-  .tomo-card__headline:before {
+  .tyslin-card__headline:before {
     content: url('~/assets/img/address.svg');
   }
 }

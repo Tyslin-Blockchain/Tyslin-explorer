@@ -89,7 +89,7 @@ body.dark-mode {
 }
 
 // Header
-body.dark-mode .tomo-nav {
+body.dark-mode .tyslin-nav {
    // background-image: linear-gradient(-135deg,#373658,#40406a);
       background-color: #f89c1d !important;
     .nav-item {
@@ -148,7 +148,7 @@ body.dark-mode .tomo-nav {
         }
     }
 
-    .tomo-nav__toggle {
+    .tyslin-nav__toggle {
         path {
             stroke: $color-text-dark;
         }
@@ -167,7 +167,7 @@ body.dark-mode .search-form {
 }
 
 // Breadcrumbs
-body.dark-mode .breadcrumb.tomo-breadcrumb {
+body.dark-mode .breadcrumb.tyslin-breadcrumb {
 
     a {
         color: $color-text-dark-alt;
@@ -183,7 +183,7 @@ body.dark-mode .breadcrumb.tomo-breadcrumb {
 }
 
 // Table
-body.dark-mode .tomo-table {
+body.dark-mode .tyslin-table {
     
     thead tr {
         color: $color-text-dark;
@@ -207,7 +207,7 @@ body.dark-mode .tomo-table {
     }
 }
 
-body.dark-mode .tomo-table--verified-contract {
+body.dark-mode .tyslin-table--verified-contract {
 
     tbody {
         background-color: transparent;
@@ -223,7 +223,7 @@ body.dark-mode .tomo-table--verified-contract {
     }
 }
 
-body.dark-mode .tomo-contract-info {
+body.dark-mode .tyslin-contract-info {
 
     tr {
         border-bottom-color: $color-text-dark;
@@ -243,7 +243,7 @@ body.dark-mode .tomo-contract-info {
 }
 
 // Footer
-body.dark-mode .tomo-footer  {
+body.dark-mode .tyslin-footer  {
     color: $color-text-dark;
 
     &__copyright {
@@ -269,7 +269,7 @@ body.dark-mode .tomo-footer  {
 }
 
 // Modal
-body.dark-mode .tomo-modal {
+body.dark-mode .tyslin-modal {
 
     .modal-header .close {
         color: #7573a8;
@@ -304,8 +304,8 @@ body.dark-mode .tomo-modal {
     }
 }
 
-// Tomo Stat
-body.dark-mode .tomo-stat .tomo-stat__item a {
+// Tyslin Stat
+body.dark-mode .tyslin-stat .tyslin-stat__item a {
     color: $color-text-dark-alt;
 
     &:hover {
@@ -314,12 +314,12 @@ body.dark-mode .tomo-stat .tomo-stat__item a {
 }
 
 // Headline
-body.dark-mode .tomo-headline {
+body.dark-mode .tyslin-headline {
     color: $black;
 }
 
 // Tabs
-body.dark-mode .tomo-tabs {
+body.dark-mode .tyslin-tabs {
 
     .nav-link {
         border-bottom-color: #505078;
@@ -333,7 +333,7 @@ body.dark-mode .tomo-tabs {
 }
 
 // Card
-body.dark-mode .tomo-card {
+body.dark-mode .tyslin-card {
    // background-image: linear-gradient(-135deg,#2d2d4a,#40406a,#1d1e31);
     background-size: 400% 400%;
     background-color:$white;
@@ -360,7 +360,7 @@ body.dark-mode .tomo-card {
         }
     }
 
-    .tomo-qrcode .btn.code-actions__copy {
+    .tyslin-qrcode .btn.code-actions__copy {
         color: $color-text-white-dark;
     }
 
@@ -372,7 +372,7 @@ body.dark-mode .tomo-card {
 // Custom CSS
 body.dark-mode {
 
-    .tomo-total-items {
+    .tyslin-total-items {
         color: $black;
     }
 
@@ -532,7 +532,7 @@ body.dark-mode .vue-codemirror {
 }
 
 // Pagination
-body.dark-mode .tomo-pagination {
+body.dark-mode .tyslin-pagination {
     
     .page-item {
 
@@ -581,10 +581,10 @@ body.dark-mode .code-actions .btn {
 }
 
 // Token Info
-body.dark-mode .tomo-card--token {
+body.dark-mode .tyslin-card--token {
     background-image: linear-gradient(-135deg,#373658,#40406a);
 
-    .tomo-card__table tr {
+    .tyslin-card__table tr {
         border-bottom-color: #505078;
     }
 

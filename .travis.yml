@@ -24,40 +24,40 @@ jobs:
         - docker
       install: skip
       before_script:
-        - docker build -t tomochain/tomoscan-server -f Dockerfile.server .
-        - docker build -t tomochain/tomoscan-client -f Dockerfile.client .
+        - docker build -t tyslinchain/tyslinscan-server -f Dockerfile.server .
+        - docker build -t tyslinchain/tyslinscan-client -f Dockerfile.client .
       script:
         - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
-        - docker tag tomochain/tomoscan-server tomochain/tomoscan-server:latest
-        - docker push tomochain/tomoscan-server:latest
-        - docker tag tomochain/tomoscan-server tomochain/tomoscan-server:$TRAVIS_BUILD_ID
-        - docker push tomochain/tomoscan-server:$TRAVIS_BUILD_ID
-        - docker tag tomochain/tomoscan-client tomochain/tomoscan-client:latest
-        - docker push tomochain/tomoscan-client:latest
-        - docker tag tomochain/tomoscan-client tomochain/tomoscan-client:$TRAVIS_BUILD_ID
-        - docker push tomochain/tomoscan-client:$TRAVIS_BUILD_ID
+        - docker tag tyslinchain/tyslinscan-server tyslinchain/tyslinscan-server:latest
+        - docker push tyslinchain/tyslinscan-server:latest
+        - docker tag tyslinchain/tyslinscan-server tyslinchain/tyslinscan-server:$TRAVIS_BUILD_ID
+        - docker push tyslinchain/tyslinscan-server:$TRAVIS_BUILD_ID
+        - docker tag tyslinchain/tyslinscan-client tyslinchain/tyslinscan-client:latest
+        - docker push tyslinchain/tyslinscan-client:latest
+        - docker tag tyslinchain/tyslinscan-client tyslinchain/tyslinscan-client:$TRAVIS_BUILD_ID
+        - docker push tyslinchain/tyslinscan-client:$TRAVIS_BUILD_ID
 
     - stage: Build and push image (tagged)
       services:
         - docker
       install: skip
       before_script:
-        - docker build -t tomochain/tomoscan-server -f Dockerfile.server .
-        - docker build -t tomochain/tomoscan-client -f Dockerfile.client .
+        - docker build -t tyslinchain/tyslinscan-server -f Dockerfile.server .
+        - docker build -t tyslinchain/tyslinscan-client -f Dockerfile.client .
       script:
         - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
-        - docker tag tomochain/tomoscan-server tomochain/tomoscan-server:latest
-        - docker push tomochain/tomoscan-server:latest
-        - docker tag tomochain/tomoscan-server tomochain/tomoscan-server:testnet
-        - docker push tomochain/tomoscan-server:testnet
-        - docker tag tomochain/tomoscan-server tomochain/tomoscan-server:$TRAVIS_TAG
-        - docker push tomochain/tomoscan-server:$TRAVIS_TAG
-        - docker tag tomochain/tomoscan-client tomochain/tomoscan-client:latest
-        - docker push tomochain/tomoscan-client:latest
-        - docker tag tomochain/tomoscan-client tomochain/tomoscan-client:testnet
-        - docker push tomochain/tomoscan-client:testnet
-        - docker tag tomochain/tomoscan-client tomochain/tomoscan-client:$TRAVIS_TAG
-        - docker push tomochain/tomoscan-client:$TRAVIS_TAG
+        - docker tag tyslinchain/tyslinscan-server tyslinchain/tyslinscan-server:latest
+        - docker push tyslinchain/tyslinscan-server:latest
+        - docker tag tyslinchain/tyslinscan-server tyslinchain/tyslinscan-server:testnet
+        - docker push tyslinchain/tyslinscan-server:testnet
+        - docker tag tyslinchain/tyslinscan-server tyslinchain/tyslinscan-server:$TRAVIS_TAG
+        - docker push tyslinchain/tyslinscan-server:$TRAVIS_TAG
+        - docker tag tyslinchain/tyslinscan-client tyslinchain/tyslinscan-client:latest
+        - docker push tyslinchain/tyslinscan-client:latest
+        - docker tag tyslinchain/tyslinscan-client tyslinchain/tyslinscan-client:testnet
+        - docker push tyslinchain/tyslinscan-client:testnet
+        - docker tag tyslinchain/tyslinscan-client tyslinchain/tyslinscan-client:$TRAVIS_TAG
+        - docker push tyslinchain/tyslinscan-client:$TRAVIS_TAG
 
     - stage: Deploy in devnet
       install: skip
@@ -68,14 +68,14 @@ jobs:
         - echo -e "Host $DEVNET_SSH_IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
         - ssh-add ./travis.pem
       script:
-        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tomochain/tomoscan-client:latest devnet-main_tomoscan 1> /dev/null
-        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tomochain/tomoscan-server:latest devnet-main_tomoscan_crawler 1> /dev/null
-        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tomochain/tomoscan-server:latest devnet-main_tomoscan_server 1> /dev/null
-        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tomochain/tomoscan-server:latest devnet-main_tomoscan_pending_txs 1> /dev/null
+        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tyslinchain/tyslinscan-client:latest devnet-main_tyslinscan 1> /dev/null
+        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tyslinchain/tyslinscan-server:latest devnet-main_tyslinscan_crawler 1> /dev/null
+        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tyslinchain/tyslinscan-server:latest devnet-main_tyslinscan_server 1> /dev/null
+        - ssh -i ./travis.pem -l $DEVNET_SSH_USER $DEVNET_SSH_IP docker service update --image tyslinchain/tyslinscan-server:latest devnet-main_tyslinscan_pending_txs 1> /dev/null
       after_success:
-        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[devnet] Deployment succeeded\",\"pretext\":\"\",\"color\":\"good\",\"fields\":[{\"title\":\"[devnet] TomoScan\",\"value\":\"Deployment succeeded.\",\"short\":true}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
+        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[devnet] Deployment succeeded\",\"pretext\":\"\",\"color\":\"good\",\"fields\":[{\"title\":\"[devnet] TyslinScan\",\"value\":\"Deployment succeeded.\",\"short\":true}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
       after_failure:
-        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[devnet] Deployment failed\",\"pretext\":\"\",\"color\":\"danger\",\"fields\":[{\"title\":\"[devnet] TomoScan\",\"value\":\"Deployment failed.\",\"short\":false}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
+        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[devnet] Deployment failed\",\"pretext\":\"\",\"color\":\"danger\",\"fields\":[{\"title\":\"[devnet] TyslinScan\",\"value\":\"Deployment failed.\",\"short\":false}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
 
     - stage: Deploy in testnet
       install: skip
@@ -86,23 +86,23 @@ jobs:
         - echo -e "Host $TESTNET_SSH_IP\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
         - ssh-add ./travis.pem
       script:
-        - ssh -i ./travis.pem -l $TESTNET_SSH_USER $TESTNET_SSH_IP docker service update --image tomochain/tomoscan-client:testnet testnet_tomoscan 1> /dev/null
-        - ssh -i ./travis.pem -l $TESTNET_SSH_USER $TESTNET_SSH_IP docker service update --image tomochain/tomoscan-server:testnet testnet_tomoscan_crawler 1> /dev/null
-        - ssh -i ./travis.pem -l $TESTNET_SSH_USER $TESTNET_SSH_IP docker service update --image tomochain/tomoscan-server:testnet testnet_tomoscan_server 1> /dev/null
+        - ssh -i ./travis.pem -l $TESTNET_SSH_USER $TESTNET_SSH_IP docker service update --image tyslinchain/tyslinscan-client:testnet testnet_tyslinscan 1> /dev/null
+        - ssh -i ./travis.pem -l $TESTNET_SSH_USER $TESTNET_SSH_IP docker service update --image tyslinchain/tyslinscan-server:testnet testnet_tyslinscan_crawler 1> /dev/null
+        - ssh -i ./travis.pem -l $TESTNET_SSH_USER $TESTNET_SSH_IP docker service update --image tyslinchain/tyslinscan-server:testnet testnet_tyslinscan_server 1> /dev/null
       after_success:
-        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[testnet] Deployment succeeded\",\"pretext\":\"\",\"color\":\"good\",\"fields\":[{\"title\":\"[testnet] TomoScan\",\"value\":\"Deployment succeeded.\",\"short\":true}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
+        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[testnet] Deployment succeeded\",\"pretext\":\"\",\"color\":\"good\",\"fields\":[{\"title\":\"[testnet] TyslinScan\",\"value\":\"Deployment succeeded.\",\"short\":true}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
       after_failure:
-        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[testnet] Deployment failed\",\"pretext\":\"\",\"color\":\"danger\",\"fields\":[{\"title\":\"[testnet] TomoScan\",\"value\":\"Deployment failed.\",\"short\":false}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
+        -  'curl -X POST --data-urlencode "payload={\"channel\": \"#deployments\", \"username\": \"Travis\", \"attachments\":[{\"fallback\":\"[testnet] Deployment failed\",\"pretext\":\"\",\"color\":\"danger\",\"fields\":[{\"title\":\"[testnet] TyslinScan\",\"value\":\"Deployment failed.\",\"short\":false}]}], \"icon_emoji\": \":male-construction-worker:\"}" $SLACK_DEPLOY_URL'
 
 stages:
   - name: Lint
   - name: Audit
   - name: Tests
   - name: Build and push image
-    if: type != pull_request AND branch = master AND tag IS blank AND repo = tomochain/tomoscan
+    if: type != pull_request AND branch = master AND tag IS blank AND repo = tyslinchain/tyslinscan
   - name: Build and push image (tagged)
-    if: type != pull_request AND branch =~ ^v AND tag IS present AND repo = tomochain/tomoscan
+    if: type != pull_request AND branch =~ ^v AND tag IS present AND repo = tyslinchain/tyslinscan
   - name: Deploy in devnet
-    if: type != pull_request AND branch = master AND repo = tomochain/tomoscan
+    if: type != pull_request AND branch = master AND repo = tyslinchain/tyslinscan
   - name: Deploy in testnet
-    if: type != pull_request AND branch =~ ^v AND tag IS present AND repo = tomochain/tomoscan
+    if: type != pull_request AND branch =~ ^v AND tag IS present AND repo = tyslinchain/tyslinscan

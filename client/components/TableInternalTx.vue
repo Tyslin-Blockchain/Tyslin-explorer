@@ -1,26 +1,26 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
 
         <div
             v-if="total == 0"
-            class="tomo-empty">
-            <i class="fa fa-exchange tomo-empty__icon"/>
-            <p class="tomo-empty__description">No internal transaction found</p>
+            class="tyslin-empty">
+            <i class="fa fa-exchange tyslin-empty__icon"/>
+            <p class="tyslin-empty__description">No internal transaction found</p>
         </div>
 
         <p
             v-if="total > 0"
-            class="tomo-total-items">
+            class="tyslin-total-items">
             {{ _nFormatNumber('internal transaction', 'internal transactions', total, realTotal) }}</p>
 
         <table-base
             v-if="total > 0"
             :fields="fields"
             :items="items"
-            class="tomo-table--internal-transactions">
+            class="tyslin-table--internal-transactions">
             <template
                 slot="hash"
                 slot-scope="props">
@@ -73,7 +73,7 @@
 
             <template
                 slot="value"
-                slot-scope="props">{{ formatUnit(toTomo(props.item.value)) }}</template>
+                slot-scope="props">{{ formatUnit(toTyslin(props.item.value)) }}</template>
 
         </table-base>
 
@@ -86,7 +86,7 @@
             :link-gen="linkGen"
             :limit="7"
             align="center"
-            class="tomo-pagination"
+            class="tyslin-pagination"
             @change="onChangePaginate"
         />
     </section>

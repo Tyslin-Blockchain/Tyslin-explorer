@@ -1,16 +1,16 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
-        <div class="card tomo-card tomo-card--token">
-            <div class="tomo-card__header">
+        <div class="card tyslin-card tyslin-card--token">
+            <div class="tyslin-card__header">
                 <h2
-                    class="tomo-card__headline"
+                    class="tyslin-card__headline"
                     v-html="tokenName"/>&nbsp;
                 <h6 class="mb-0">{{ symbol }}</h6>
             </div>
-            <div class="tomo-card__body">
+            <div class="tyslin-card__body">
                 <ul
                     v-if="errors.length"
                     class="alert alert-danger">
@@ -24,7 +24,7 @@
                         :page="this"/>
                     <table
                         v-if="authen"
-                        class="tomo-card__table">
+                        class="tyslin-card__table">
                         <tbody>
                             <tr>
                                 <td>Contract</td>

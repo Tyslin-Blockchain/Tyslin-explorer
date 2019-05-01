@@ -1,24 +1,24 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
         <div
             v-if="total == 0"
-            class="tomo-empty">
-            <i class="fa fa-user-secret tomo-empty__icon"/>
-            <p class="tomo-empty__description">No signer found</p>
+            class="tyslin-empty">
+            <i class="fa fa-user-secret tyslin-empty__icon"/>
+            <p class="tyslin-empty__description">No signer found</p>
         </div>
 
         <p
             v-if="total > 0"
-            class="tomo-total-items">Total {{ _nFormatNumber('signer', 'signers', total) }} found</p>
+            class="tyslin-total-items">Total {{ _nFormatNumber('signer', 'signers', total) }} found</p>
 
         <table-base
             v-if="total > 0"
             :fields="fields"
             :items="signers"
-            class="tomo-table--signers">
+            class="tyslin-table--signers">
             <template
                 slot="signer"
                 slot-scope="props">

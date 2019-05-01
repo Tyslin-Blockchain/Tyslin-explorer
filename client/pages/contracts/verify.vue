@@ -1,11 +1,11 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
-        <div class="card tomo-card tomo-card--verify">
-            <div class="tomo-card__header">
-                <h3 class="tomo-card__headline">Verify and Publish your Solidity Source Code</h3>
+        <div class="card tyslin-card tyslin-card--verify">
+            <div class="tyslin-card__header">
+                <h3 class="tyslin-card__headline">Verify and Publish your Solidity Source Code</h3>
                 <ul class="list-unstyled">
                     <li class="mb-2">
                         Step 1: Enter your Contract Source Code below.</li>
@@ -17,7 +17,7 @@
                         and publicably verifiable by anyone</li>
                 </ul>
             </div>
-            <div class="tomo-card__body">
+            <div class="tyslin-card__body">
 
                 <ul
                     v-if="errors.length"
@@ -28,7 +28,7 @@
                 </ul>
 
                 <form
-                    :class="loadingForm ? 'tomo-loading tomo-loading--form' : ''"
+                    :class="loadingForm ? 'tyslin-loading tyslin-loading--form' : ''"
                     novalidate
                     @submit.prevent="validate()">
                     <div class="row">

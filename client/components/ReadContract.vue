@@ -1,19 +1,19 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <div
         v-else
-        class="card tomo-card tomo-card--contract-info">
+        class="card tyslin-card tyslin-card--contract-info">
 
         <div
             v-if="data.length == 0"
-            class="tomo-empty">
-            <i class="fa fa-book tomo-empty__icon"/>
-            <p class="tomo-empty__description">Can not read this smart contract</p>
+            class="tyslin-empty">
+            <i class="fa fa-book tyslin-empty__icon"/>
+            <p class="tyslin-empty__description">Can not read this smart contract</p>
         </div>
 
-        <div class="tomo-card__header mb-3">
+        <div class="tyslin-card__header mb-3">
             <h6 class="d-md-inline-block"><i class="fa fa-book mr-2"/>Read Contract Information</h6>
             <a
                 href="#"
@@ -21,12 +21,12 @@
                 @click="resetInput"><i class="fa fa-refresh mr-1"/>Reset</a>
         </div>
 
-        <table class="tomo-card__table tomo-contract-info">
+        <table class="tyslin-card__table tyslin-contract-info">
             <tr
                 v-for="(func, index) in data"
                 :key="index">
-                <td :class="`tomo-contract-info__func ${func.inputs.length ? 'with-input' : 'no-input'}`">
-                    <span class="tomo-contract-info__name">
+                <td :class="`tyslin-contract-info__func ${func.inputs.length ? 'with-input' : 'no-input'}`">
+                    <span class="tyslin-contract-info__name">
                         {{ index + 1 }}. <i class="fa fa-caret-right"/> {{ func.name }}&nbsp;
                     </span>
                     <i
@@ -34,7 +34,7 @@
                         class="fa fa-long-arrow-right ml-2 mr-2"/>
                     <span
                         v-if="typeof func.result !== 'undefined' && ! func.inputs.length"
-                        class="tomo-contract-info__result">
+                        class="tyslin-contract-info__result">
                         <nuxt-link
                             v-if="func.outputs[0].type === 'address'"
                             :to="{name: 'address-slug', params: {slug: func.result}}"
@@ -43,11 +43,11 @@
                         <span v-else>
                             {{ func.result === '' ? '\'\'' : func.result }}
                         </span>
-                        <em class="tomo-contract-info__type">{{ func.outputs[0].type }}</em>
+                        <em class="tyslin-contract-info__type">{{ func.outputs[0].type }}</em>
                     </span>
                     <div
                         v-if="func.inputs.length"
-                        class="tomo-contract-info__inputs">
+                        class="tyslin-contract-info__inputs">
                         <input
                             v-for="(input, idx) in func.inputs"
                             :key="idx"
@@ -64,18 +64,18 @@
                     </div>
                     <div
                         v-if="func.outputs.length && typeof func.result == 'undefined'"
-                        class="tomo-contract-info__outputs">
+                        class="tyslin-contract-info__outputs">
                         <i class="fa fa-angle-double-right"/>
                         <span
                             v-for="(output, idx2) in func.outputs"
                             :key="idx2">
-                            <span class="tomo-contract-info__param-name">{{ output.name }}</span>
-                            <em class="tomo-contract-info__type">{{ output.type }}</em>
+                            <span class="tyslin-contract-info__param-name">{{ output.name }}</span>
+                            <em class="tyslin-contract-info__type">{{ output.type }}</em>
                             <span v-show="idx2 < func.outputs.length - 1">, </span>
                         </span>
                         <div
                             :id="'output_' + func.name + '_' + index"
-                            class="tomo-contract-info__result"/>
+                            class="tyslin-contract-info__result"/>
                     </div>
                 </td>
             </tr>
@@ -140,7 +140,7 @@ export default {
             let output = await this.$axios.get('/api/contracts/' + this.contract + '/call/?' + query)
 
             document.getElementById(outputElement).innerHTML =
-                `<div class="tomo-contract-info__response">
+                `<div class="tyslin-contract-info__response">
                 <p>[<strong>${functionName}</strong> method response]</p>${this.formatOuputs(output.data)}</div>`
         },
         add0xforAddress (straddress) {
@@ -157,7 +157,7 @@ export default {
                 response += '<p>'
                 response += `<i class="response${output[i].name === 'Error' ? '--error' : '--success'}"></i>&nbsp;`
                 response += `<strong>${output[i].name}</strong>&nbsp;
-                    <em class="tomo-contract-info__type">${output[i].type}</em> :
+                    <em class="tyslin-contract-info__type">${output[i].type}</em> :
                     <span>${this.formatResult(output[i].value, output[i].type)}</span>`
                 response += '</p>'
             }
@@ -176,8 +176,8 @@ export default {
         },
         resetInput (e) {
             e.preventDefault()
-            let inputs = document.querySelectorAll('.tomo-contract-info input')
-            let ouputs = document.querySelectorAll('.tomo-contract-info__func.with-input .tomo-contract-info__result')
+            let inputs = document.querySelectorAll('.tyslin-contract-info input')
+            let ouputs = document.querySelectorAll('.tyslin-contract-info__func.with-input .tyslin-contract-info__result')
 
             for (let i = 0; i < inputs.length; i++) {
                 inputs[i].value = ''

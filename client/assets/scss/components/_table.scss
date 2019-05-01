@@ -1,4 +1,4 @@
-.tomo-table {
+.tyslin-table {
   width: 100%;
   margin-bottom: 50px;
 
@@ -139,7 +139,7 @@
   }
 }
 
-.tomo-table--blocks {
+.tyslin-table--blocks {
 
   thead tr,
   tbody tr {
@@ -169,7 +169,7 @@
   }
 }
 
-.tomo-table--accounts {
+.tyslin-table--accounts {
 
   thead tr,
   tbody tr {
@@ -200,7 +200,7 @@
   }
 }
 
-.tomo-table--tokens {
+.tyslin-table--tokens {
 
   td {
     grid-template-columns: 35% auto;
@@ -246,7 +246,7 @@
   }
 }
 
-.tomo-table--tokens-nft {
+.tyslin-table--tokens-nft {
 
   td {
     grid-template-columns: 35% auto;
@@ -291,7 +291,7 @@
   }
 }
 
-.tomo-table--transactions {
+.tyslin-table--transactions {
 
   i.tx-failed {
     vertical-align: middle;
@@ -334,7 +334,7 @@
   }
 }
 
-.tomo-table--internal-transactions {
+.tyslin-table--internal-transactions {
 
   i.tx-failed {
     vertical-align: middle;
@@ -377,7 +377,7 @@
   }
 }
 
-.tomo-table--token-tx {
+.tyslin-table--token-tx {
 
   thead tr,
   tbody tr {
@@ -412,7 +412,7 @@
   }
 }
 
-.tomo-table--events {
+.tyslin-table--events {
 
   tbody tr {
     padding: 40px 20px 0;
@@ -482,7 +482,7 @@
   }
 }
 
-.tomo-table--holders {
+.tyslin-table--holders {
   td {
     grid-template-columns: 40% auto;
   }
@@ -502,7 +502,7 @@
   }
 }
 
-.tomo-table--nft-holders {
+.tyslin-table--nft-holders {
   td {
     grid-template-columns: 40% auto;
   }
@@ -522,7 +522,7 @@
   }
 }
 
-.tomo-table--tokens-by-account {
+.tyslin-table--tokens-by-account {
   .text-truncate {
     @include media-breakpoint-up(lg) {
       max-width: 100%;
@@ -530,7 +530,7 @@
   }
 }
 
-.tomo-table--follow {
+.tyslin-table--follow {
 
   thead tr,
   tbody tr {
@@ -560,7 +560,7 @@
   }
 }
 
-.tomo-table--verified-contract {
+.tyslin-table--verified-contract {
   margin-bottom: 20px;
   box-shadow: 8px 8px 40px 0 rgba(0, 0, 0, .07);
 
@@ -616,7 +616,7 @@
   }
 }
 
-.tomo-table--reward {
+.tyslin-table--reward {
 
   i.tx-failed {
     vertical-align: middle;
@@ -663,7 +663,7 @@
     }
   }
 }
-.tomo-table--reward-by-epoch {
+.tyslin-table--reward-by-epoch {
   thead tr,
   tbody tr {
 
@@ -680,7 +680,7 @@
     }
   }
 }
-.tomo-table--masternode {
+.tyslin-table--masternode {
 
   i.tx-failed {
     vertical-align: middle;
@@ -717,7 +717,7 @@
   }
 }
 
-.tomo-table--contracts {
+.tyslin-table--contracts {
 
   td {
     grid-template-columns: 35% auto;

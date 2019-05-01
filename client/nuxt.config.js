@@ -5,7 +5,7 @@ module.exports = {
   ** Headers of the page
   */
     head: {
-        title: 'TomoScan',
+        title: 'TyslinScan',
         meta: [
             { charset: 'utf-8' },
             {

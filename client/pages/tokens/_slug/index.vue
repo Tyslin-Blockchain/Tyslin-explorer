@@ -1,12 +1,12 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
-        <div class="card tomo-card tomo-card--token">
-            <div class="tomo-card__header">
+        <div class="card tyslin-card tyslin-card--token">
+            <div class="tyslin-card__header">
                 <h2
-                    class="tomo-card__headline"
+                    class="tyslin-card__headline"
                     v-html="tokenName"/>&nbsp;
                 <i
                     v-if="moreInfo"
@@ -14,12 +14,12 @@
                     aria-hidden="true"/>
                 <h6 class="mb-0">{{ symbol }}</h6>
             </div>
-            <div class="tomo-card__body">
+            <div class="tyslin-card__body">
                 <b-row>
                     <b-col md="6">
                         <table
                             v-if="token"
-                            class="tomo-card__table">
+                            class="tyslin-card__table">
                             <tbody>
                                 <tr>
                                     <td>Total Supply</td>
@@ -57,7 +57,7 @@
                     <b-col md="6">
                         <table
                             v-if="token"
-                            class="tomo-card__table">
+                            class="tyslin-card__table">
                             <tbody>
                                 <tr>
                                     <td>Contract</td>
@@ -130,7 +130,7 @@
                 <b-tabs
                     ref="allTabs"
                     v-model="tabIndex"
-                    class="tomo-tabs">
+                    class="tyslin-tabs">
                     <!--:title="'Token Transfers (' + formatNumber(tokenTxsCount) + ')'"-->
                     <b-tab
                         title="Token Transfers"

@@ -73,7 +73,7 @@ SignMessageController.post('/generateSignMess', async (req, res) => {
     try {
         const address = req.body.address || ''
 
-        const message = '[Tomoscan ' + (new Date().toLocaleString().replace(/['"]+/g, '')) + ']' +
+        const message = '[Tyslinscan ' + (new Date().toLocaleString().replace(/['"]+/g, '')) + ']' +
             ' I, hereby verify that the information provided is accurate and ' +
             'I am the owner/creator of the token contract address ' +
             '[' + address + ']'

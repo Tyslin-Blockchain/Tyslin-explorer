@@ -1,8 +1,8 @@
-.tomo-toggle {
+.tyslin-toggle {
   margin-bottom: 20px;
 }
 
-.tomo-toggle__label {
+.tyslin-toggle__label {
   display: inline-block;
   margin-left: 20px;
 
@@ -15,7 +15,7 @@
   }
 }
 
-.tomo-toggle__checkbox {
+.tyslin-toggle__checkbox {
   display: none;
 
 	&,
@@ -25,13 +25,13 @@
   & *:after,
   & *:before,
 
-	& + .tomo-toggle__btn {
+	& + .tyslin-toggle__btn {
 		&::selection {
 			background: none;
 		}
 	}
   
-	+ .tomo-toggle__btn {
+	+ .tyslin-toggle__btn {
 		outline: 0;
 		display: block;
 		width: 4em;
@@ -57,14 +57,14 @@
 		}
 	}
   
-	&:checked + .tomo-toggle__btn:after {
+	&:checked + .tyslin-toggle__btn:after {
 		left: 50%;
 	}
 }
 
-.tomo-toggle__checkbox {
+.tyslin-toggle__checkbox {
 
-	+ .tomo-toggle__btn {
+	+ .tyslin-toggle__btn {
     display: inline-block;
     vertical-align: middle;
 		background: #f0f0f0;
@@ -80,7 +80,7 @@
 		}
 	}
   
-	&:checked + .tomo-toggle__btn {
+	&:checked + .tyslin-toggle__btn {
     background: $color-primary;
 	}
 }

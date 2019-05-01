@@ -69,7 +69,7 @@ const mixin = {
             return str + str2
         },
 
-        toTomo: (wei, limitComma = 5) => {
+        toTyslin: (wei, limitComma = 5) => {
             if (isNaN(wei)) {
                 return '0'
             }
@@ -109,7 +109,7 @@ const mixin = {
             return mixin.methods.formatNumber(weiNumber, decimal)
         },
 
-        toTomoNumber: (wei) => {
+        toTyslinNumber: (wei) => {
             BigNumber.config({ EXPONENTIAL_AT: [-100, 100] })
 
             let weiNumber = new BigNumber(wei)

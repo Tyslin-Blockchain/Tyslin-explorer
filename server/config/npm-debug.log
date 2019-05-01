@@ -12,7 +12,7 @@
 4 verbose stack     at ReadFileContext.<anonymous> (/usr/share/npm/node_modules/read-package-json/read-json.js:284:20)
 4 verbose stack     at ReadFileContext.callback (/usr/share/npm/node_modules/graceful-fs/graceful-fs.js:76:16)
 4 verbose stack     at FSReqWrap.readFileAfterOpen [as oncomplete] (fs.js:420:13)
-5 verbose cwd /home/abchnodeII/tomoscan/server/config
+5 verbose cwd /home/abchnodeII/tyslinscan/server/config
 6 error Linux 4.15.0-45-generic
 7 error argv "/usr/bin/node" "/usr/bin/npm" "run" "crawler-dev"
 8 error node v8.10.0

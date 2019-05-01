@@ -1,24 +1,24 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
         <div
             v-if="total == 0"
-            class="tomo-empty">
-            <i class="fa fa-user-secret tomo-empty__icon"/>
-            <p class="tomo-empty__description">No account found</p>
+            class="tyslin-empty">
+            <i class="fa fa-user-secret tyslin-empty__icon"/>
+            <p class="tyslin-empty__description">No account found</p>
         </div>
 
         <p
             v-if="total > 0"
-            class="tomo-total-items">{{ _nFormatNumber('account', 'accounts', total, realTotal) }}</p>
+            class="tyslin-total-items">{{ _nFormatNumber('account', 'accounts', total, realTotal) }}</p>
 
         <table-base
             v-if="total > 0"
             :fields="fields"
             :items="items"
-            class="tomo-table--accounts">
+            class="tyslin-table--accounts">
 
             <template
                 slot="rank"
@@ -42,10 +42,10 @@
                 slot-scope="props">
                 <span
                     class="d-lg-none"
-                    v-html="formatUnit(toTomo(props.item.balance, 5))"/>
+                    v-html="formatUnit(toTyslin(props.item.balance, 5))"/>
                 <span
                     class="d-none d-lg-block"
-                    v-html="formatUnit(toTomo(props.item.balance))"/>
+                    v-html="formatUnit(toTyslin(props.item.balance))"/>
             </template>
         </table-base>
 
@@ -58,7 +58,7 @@
             :link-gen="linkGen"
             :limit="7"
             align="center"
-            class="tomo-pagination"
+            class="tyslin-pagination"
             @change="onChangePaginate"
         />
     </section>

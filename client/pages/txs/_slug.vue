@@ -1,9 +1,9 @@
 <template>
     <div
         v-if="loading"
-        :class="(loading ? 'tomo-loading tomo-loading--full' : '')"/>
+        :class="(loading ? 'tyslin-loading tyslin-loading--full' : '')"/>
     <section v-else>
-        <h3 class="tomo-headline">
+        <h3 class="tyslin-headline">
             <span class="mr-2">TXID:</span>
             <read-more
                 :text="hash"
@@ -28,7 +28,7 @@
                 <b-tabs
                     ref="allTabs"
                     v-model="tabIndex"
-                    class="tomo-tabs"
+                    class="tyslin-tabs"
                     @input="onSwitchTab">
                     <b-tab
                         :active="hashTab === '#overview'"
@@ -36,11 +36,11 @@
                         href="#overview">
                         <div
                             v-if="hashTab === '#overview'"
-                            class="card tomo-card tomo-card--transaction">
-                            <div class="tomo-card__body">
+                            class="card tyslin-card tyslin-card--transaction">
+                            <div class="tyslin-card__body">
                                 <table
                                     v-if="tx"
-                                    class="tomo-card__table">
+                                    class="tyslin-card__table">
                                     <tbody>
                                         <tr>
                                             <td>TxHash</td>
@@ -128,7 +128,7 @@
                                                         :key="key">
                                                         <span class="text-secondary">TRANSFER </span>
                                                         <span class="internal-color">
-                                                            {{ formatUnit(toTomo(internal.value, 18)) }}</span>
+                                                            {{ formatUnit(toTyslin(internal.value, 18)) }}</span>
                                                         <span class="text-secondary"> From </span>
                                                         <nuxt-link
                                                             :to="{name: 'address-slug', params: {slug: internal.from}}"
@@ -144,7 +144,7 @@
                                         </tr>
                                         <tr>
                                             <td>Value</td>
-                                            <td>{{ formatUnit(toTomo(tx.value, 18)) }}</td>
+                                            <td>{{ formatUnit(toTyslin(tx.value, 18)) }}</td>
                                         </tr>
                                         <tr>
                                             <td>Gas Used By Txn</td>
@@ -152,11 +152,11 @@
                                         </tr>
                                         <tr>
                                             <td>Gas Price</td>
-                                            <td>{{ formatUnit(toTomo(tx.gasPrice, 18)) }}</td>
+                                            <td>{{ formatUnit(toTyslin(tx.gasPrice, 18)) }}</td>
                                         </tr>
                                         <tr>
                                             <td>Actual Tx Cost/Fee</td>
-                                            <td>{{ formatUnit(toTomo(tx.gasPrice * tx.gasUsed, 18)) }}</td>
+                                            <td>{{ formatUnit(toTyslin(tx.gasPrice * tx.gasUsed, 18)) }}</td>
                                         </tr>
                                         <tr v-if="tx.tokenTxs && tx.tokenTxs.length">
                                             <td>Token Transfer</td>

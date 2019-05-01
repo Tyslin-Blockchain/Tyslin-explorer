@@ -60,7 +60,7 @@ let TransactionHelper = {
                     hash: tx.from,
                     countType: 'outTx'
                 })
-                if (tx.to !== contractAddress.BlockSigner && tx.to !== contractAddress.TomoRandomize) {
+                if (tx.to !== contractAddress.BlockSigner && tx.to !== contractAddress.TyslinRandomize) {
                     if (!listHash.includes(tx.from.toLowerCase())) {
                         listHash.push(tx.from.toLowerCase())
                     }
@@ -68,7 +68,7 @@ let TransactionHelper = {
             }
             if (tx.to !== null) {
                 tx.to = tx.to.toLowerCase()
-                if (tx.to !== contractAddress.BlockSigner && tx.to !== contractAddress.TomoRandomize) {
+                if (tx.to !== contractAddress.BlockSigner && tx.to !== contractAddress.TyslinRandomize) {
                     if (!listHash.includes(tx.to)) {
                         listHash.push(tx.to)
                     }

@@ -2,7 +2,7 @@
   border: none;
   transition: all .5s ease-in;
 
-  .tomo-nav & {
+  .tyslin-nav & {
 
     @include media-breakpoint-down(md) {
       border-top: 1px solid #e6e6e6;
@@ -21,7 +21,7 @@
 
 .dropdown-item {
 
-  .tomo-nav & {
+  .tyslin-nav & {
     font-size: 14px;
     color: $black;
 

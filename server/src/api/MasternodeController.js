@@ -8,8 +8,8 @@ const MasternodeController = Router()
 
 MasternodeController.get('/masternodes', async (req, res) => {
     try {
-        const tomomasterUrl = config.get('TOMOMASTER_API_URL')
-        const { data } = await axios.get(urlJoin(tomomasterUrl, '/api/candidates'))
+        const tyslinmasterUrl = config.get('TYSMASTER_API_URL')
+        const { data } = await axios.get(urlJoin(tyslinmasterUrl, '/api/candidates'))
         return res.json(data)
     } catch (e) {
         logger.warn('Error get list masternode %s', e)

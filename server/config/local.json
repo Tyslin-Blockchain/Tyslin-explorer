@@ -31,8 +31,8 @@
     }
   ],
 
-  "WEB3_URI": "http://localhost:8549/",
-  "WEB3_WS_URI": "wss://localhost:8552/",
+  "WEB3_URI": "http://139.180.130.158:8545/",
+  "WEB3_WS_URI": "wss://139.180.130.158:8552/",
   "DEBUG_QUERY": false,
 
   "BASE_UNIT": "ABCH",

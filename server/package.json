@@ -46,7 +46,7 @@
     "ethereumjs-util": "^5.1.5",
     "express": "^4.13.3",
     "express-validator": "^5.3.1",
-    "jsonwebtoken": "^8.2.1",
+    "jsonwebtoken": "^9.0.0",
     "kue": "^0.11.6",
     "lodash": "^4.17.11",
     "memory-cache": "^0.2.0",

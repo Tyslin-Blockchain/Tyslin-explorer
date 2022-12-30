@@ -26,7 +26,7 @@
     "lodash": "^4.17.5",
     "moment": "^2.22.1",
     "morgan": "^1.9.0",
-    "nuxt": "^1.4.0",
+    "nuxt": "^3.0.0",
     "store": "^2.0.12",
     "vue": "^2.5.16",
     "vue-clipboards": "^1.2.4",
@@ -39,7 +39,7 @@
     "babel-eslint": "^8.2.5",
     "eslint": "^5.15.3",
     "eslint-config-standard": "^11.0.0",
-    "eslint-loader": "^2.0.0",
+    "eslint-loader": "^4.0.2",
     "eslint-plugin-babel": "^5.1.0",
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-node": "^6.0.1",
@@ -47,7 +47,7 @@
     "eslint-plugin-standard": "^3.1.0",
     "eslint-plugin-vue": "^4.5.0",
     "node-sass": "^4.8.3",
-    "sass-loader": "^7.0.1"
+    "sass-loader": "^13.2.0"
   },
   "engines": {
     "node": "6.1.0"
